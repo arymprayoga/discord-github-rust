@@ -1,0 +1,14 @@
+[package]
+name = "discord-bot-rust"
+version = "0.1.0"
+authors = ["Ryyyyyyy <arymp111@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.68"
+poise = "0.6.1"
+serenity = "0.12"
+tracing = "0.1.37"
+tokio = { version = "1.26.0", features = ["full", "rt-multi-thread"] }
+dotenv = "0.15.0"
+dirs = "5.0.1"
