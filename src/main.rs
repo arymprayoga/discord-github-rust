@@ -3,6 +3,7 @@ use dotenv::dotenv;
 use commands::sof_start::sof_start;
 use commands::sof_stop::sof_stop;
 use commands::sof_restart::sof_restart;
+use commands::ayah_random::ayah_random;
 
 pub struct Data {}
 
@@ -11,6 +12,7 @@ mod commands {
     pub mod sof_start;
     pub mod sof_stop;
     pub mod sof_restart;
+    pub mod ayah_random;
 }
 #[tokio::main]
 async fn main() {
@@ -23,7 +25,8 @@ async fn main() {
             commands: vec![
                 sof_start(),
                 sof_stop(),
-                sof_restart()],
+                sof_restart(),
+                ayah_random()],
             ..Default::default()
         })
         .setup(|ctx, _ready, framework| {
