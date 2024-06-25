@@ -7,7 +7,8 @@ type Error = Box<dyn std::error::Error + Send + Sync>;
 type Context<'a> = poise::Context<'a, Data, Error>;
 
 async fn run_docker_compose_up() -> Result<String, Error> {
-    run_docker_compose_command(vec!["compose", "up", "-d"]).await
+    let directory = "steam/docker-sons-of-the-forest-dedicated-server";
+    run_docker_compose_command(vec!["compose", "up", "-d"], directory).await
 }
 
 #[poise::command(slash_command)]

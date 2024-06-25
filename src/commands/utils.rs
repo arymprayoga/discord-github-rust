@@ -4,9 +4,9 @@ use poise::Context;
 use crate::Data;
 use dirs;
 
-pub async fn run_docker_compose_command(args: Vec<&str>) -> Result<String, Box<dyn Error + Send + Sync>> {
+pub async fn run_docker_compose_command(args: Vec<&str>, directory: &str) -> Result<String, Box<dyn Error + Send + Sync>> {
     let mut dir = dirs::home_dir().expect("Home directory not found");
-    dir.push("steam/docker-sons-of-the-forest-dedicated-server");
+    dir.push(directory);
 
     match Command::new("docker")
         .args(&args)
