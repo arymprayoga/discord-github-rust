@@ -7,6 +7,7 @@ use commands::ayah_random::ayah_random;
 use commands::minecraft::minecraft_start::minecraft_start;
 use commands::minecraft::minecraft_stop::minecraft_stop;
 use commands::minecraft::minecraft_restart::minecraft_restart;
+use crate::commands::minecraft::minecraft_command::minecraft_command;
 
 pub struct Data {}
 
@@ -26,7 +27,8 @@ async fn main() {
                 ayah_random(),
                 minecraft_start(),
                 minecraft_stop(),
-                minecraft_restart()],
+                minecraft_restart(),
+                minecraft_command()],
             ..Default::default()
         })
         .setup(|ctx, _ready, framework| {
